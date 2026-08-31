@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+
   workflow_dispatch:
 
 permissions:
@@ -16,10 +17,17 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+
+  deploy:
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -35,10 +43,10 @@ jobs:
       - name: Build React app
         run: npm run build
 
-      - name: Setup Pages
+      - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload site
+      - name: Upload build
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
