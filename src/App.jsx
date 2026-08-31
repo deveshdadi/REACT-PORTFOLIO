@@ -1,6 +1,6 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -12,27 +12,21 @@ import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/REACT-PORTFOLIO">
 
       <Navbar />
 
       <Routes>
-
         <Route path="/" element={<Home />} />
-
         <Route path="/about" element={<About />} />
-
         <Route path="/projects" element={<Projects />} />
-
         <Route path="/skills" element={<Skills />} />
-
         <Route path="/contact" element={<Contact />} />
-
       </Routes>
 
       <Footer />
 
-  <BrowserRouter basename="/REACT-PORTFOLIO">
+    </BrowserRouter>
   );
 }
 
