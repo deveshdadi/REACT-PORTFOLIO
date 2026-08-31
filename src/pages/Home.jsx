@@ -64,7 +64,6 @@ function Home() {
 
     }, speed);
 
-
     return () => clearTimeout(timer);
 
   }, [displayText, isDeleting, roleIndex]);
@@ -74,7 +73,6 @@ function Home() {
     <main className="home">
 
       <section className="hero">
-
 
         {/* LEFT SIDE */}
 
@@ -127,7 +125,7 @@ function Home() {
 
 
             <a
-              href="/resume01.pdf"
+              href={`${import.meta.env.BASE_URL}resume01.pdf`}
               download
               className="secondary-button"
             >
@@ -201,7 +199,7 @@ function Home() {
           <div className="profile-image">
 
             <img
-              src="/profile.png"
+              src={`${import.meta.env.BASE_URL}profile.png`}
               alt="Devesh Dadi"
             />
 
