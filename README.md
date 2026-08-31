@@ -1,16 +1,83 @@
-# React + Vite
+# 🚀 Devesh Dadi — Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> A modern, responsive personal portfolio built to showcase my skills, projects, and journey as a Full Stack Developer and aspiring AI Engineer.
 
-Currently, two official plugins are available:
+🌐 **Live Website:** Coming Soon
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 👋 About
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Welcome to my personal portfolio!
 
-## Expanding the Oxlint configuration
+I'm **Devesh Dadi**, a Full Stack Developer and aspiring AI Engineer passionate about building modern web applications and exploring intelligent technologies.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+This portfolio is designed to showcase my technical skills, projects, interests, and the technologies I'm continuously learning.
+
+---
+
+## ✨ Features
+
+- 🎨 Modern dark-themed UI
+- 📱 Fully responsive design
+- ⌨️ Interactive typing animation
+- 🧭 Multi-page navigation using React Router
+- 👤 Personal About Me section
+- 💻 Projects showcase
+- 🛠️ Technical Skills section
+- 📩 Contact section
+- 📄 Resume download
+- 🔗 GitHub, LinkedIn and Instagram integration
+- ⚡ Fast and lightweight React application
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- HTML
+- CSS
+- JavaScript
+- React
+
+### Programming & Backend
+- Java
+- Python
+- MySQL
+
+### Tools & Technologies
+- Git
+- GitHub
+- VS Code
+
+---
+
+## 📂 Project Structure
+
+```text
+REACT-PORTFOLIO
+│
+├── public
+│   ├── profile.png
+│   ├── resume01.pdf
+│   └── icons.svg
+│
+├── src
+│   ├── components
+│   │   ├── Navbar.jsx
+│   │   └── footer.jsx
+│   │
+│   ├── pages
+│   │   ├── Home.jsx
+│   │   ├── About.jsx
+│   │   ├── Projects.jsx
+│   │   ├── Skills.jsx
+│   │   └── contact.jsx
+│   │
+│   ├── App.jsx
+│   ├── App.css
+│   └── index.css
+│
+├── package.json
+├── vite.config.js
+└── README.md
