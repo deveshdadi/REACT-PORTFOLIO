@@ -15,7 +15,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: #050816;
   color: #ffffff;
-  overflow-x: hidden;
 }
 
 a {
@@ -45,7 +44,6 @@ nav h2 {
 nav div {
   display: flex;
   gap: 30px;
-  align-items: center;
 }
 
 nav a {
@@ -54,6 +52,25 @@ nav a {
   font-size: 15px;
 
   transition: color 0.3s ease;
+}
+
+/* ACTIVE PAGE */
+
+nav a.active {
+  color: #6366f1;
+  font-weight: 600;
+  position: relative;
+}
+
+nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  background: #6366f1;
+  border-radius: 2px;
 }
 
 nav a:hover {
@@ -66,7 +83,6 @@ nav a:hover {
 ========================= */
 
 .home {
-  min-height: calc(100vh - 80px);
   background: #050816;
 }
 
@@ -77,6 +93,7 @@ nav a:hover {
 
 .hero {
   min-height: calc(100vh - 80px);
+  height: calc(100vh - 80px);
 
   display: flex;
   align-items: center;
@@ -359,8 +376,6 @@ nav a:hover {
 ========================= */
 
 .page {
-  min-height: calc(100vh - 80px);
-
   background: #050816;
 }
 
@@ -399,7 +414,7 @@ nav a:hover {
 
   margin: 0 auto;
 
-  padding: 100px 7%;
+  padding: 70px 7%;
 }
 
 .about-content {
@@ -480,7 +495,7 @@ nav a:hover {
 
   margin: 0 auto;
 
-  padding: 100px 7%;
+  padding: 70px 7%;
 }
 
 .projects-grid {
@@ -616,7 +631,7 @@ nav a:hover {
 
   margin: 0 auto;
 
-  padding: 100px 7%;
+  padding: 70px 7%;
 }
 
 .skills-main-grid {
@@ -705,7 +720,7 @@ nav a:hover {
 
   margin: 0 auto;
 
-  padding: 100px 7%;
+  padding: 70px 7%;
 }
 
 .contact-content {
@@ -834,15 +849,23 @@ footer {
 
 @media (max-width: 900px) {
 
+  /* About */
+
   .about-content {
     grid-template-columns: 1fr;
 
     gap: 40px;
   }
 
+
+  /* Projects */
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
+
+
+  /* Skills */
 
   .skills-main-grid {
     grid-template-columns: 1fr;
@@ -850,18 +873,28 @@ footer {
     gap: 40px;
   }
 
+
+  /* Contact */
+
   .contact-content {
     grid-template-columns: 1fr;
 
     gap: 50px;
   }
 
+
+  /* Hero */
+
   .hero {
+    height: auto;
+    min-height: calc(100vh - 80px);
+
     flex-direction: column;
 
     text-align: center;
 
     padding-top: 50px;
+    padding-bottom: 50px;
   }
 
   .hero-content {
@@ -902,10 +935,10 @@ footer {
 
 @media (max-width: 600px) {
 
-  /* ---------- NAVBAR ---------- */
+  /* Navbar */
 
   nav {
-    padding: 18px 20px;
+    padding: 20px;
 
     flex-direction: column;
 
@@ -915,7 +948,7 @@ footer {
   }
 
   nav h2 {
-    font-size: 22px;
+    font-size: 20px;
 
     text-align: center;
   }
@@ -935,7 +968,7 @@ footer {
   }
 
   nav a {
-    font-size: 14px;
+    font-size: 13px;
 
     padding: 4px 0;
 
@@ -943,126 +976,77 @@ footer {
   }
 
 
-  /* ---------- HERO ---------- */
+  /* Hero */
 
   .hero {
+    height: auto;
+
     min-height: auto;
 
-    padding: 55px 20px 70px;
-
-    gap: 45px;
+    padding: 50px 20px;
   }
 
   .greeting {
     font-size: 18px;
-
-    margin-bottom: 8px;
   }
 
   .hero-content h1 {
-    font-size: clamp(42px, 12vw, 52px);
-
-    line-height: 1.05;
-
-    margin-bottom: 15px;
+    font-size: 48px;
   }
 
 
-  /* ---------- TYPING ---------- */
+  /* Typing */
 
   .role-container {
     min-height: 45px;
-
-    justify-content: center;
-
-    max-width: 100%;
-
-    white-space: nowrap;
   }
 
   .typing-role {
-    font-size: clamp(25px, 7.5vw, 32px);
+    font-size: 30px;
   }
 
   .cursor {
-    font-size: clamp(25px, 7.5vw, 32px);
+    font-size: 30px;
   }
 
 
-  /* ---------- DESCRIPTION ---------- */
+  /* Description */
 
   .hero-description {
     font-size: 15px;
-
-    line-height: 1.7;
-
-    margin: 22px auto 30px;
-
-    max-width: 500px;
   }
 
 
-  /* ---------- BUTTONS ---------- */
+  /* Buttons */
 
   .hero-buttons {
     flex-direction: column;
 
     align-items: stretch;
-
-    width: 100%;
-
-    max-width: 360px;
-
-    margin: 0 auto;
   }
 
   .primary-button,
   .secondary-button {
     justify-content: center;
-
-    width: 100%;
-
-    padding: 14px 20px;
   }
 
 
-  /* ---------- SOCIAL ICONS ---------- */
-
-  .social-links {
-    justify-content: center;
-
-    gap: 14px;
-
-    margin-top: 25px;
-  }
-
-
-  /* ---------- PROFILE ---------- */
+  /* Profile */
 
   .hero-image-container {
     width: 280px;
 
-    height: 350px;
-  }
-
-  .glow-circle {
-    width: 250px;
-
-    height: 250px;
-
-    filter: blur(65px);
+    height: 330px;
   }
 
   .profile-image {
-    width: 230px;
+    width: 220px;
 
-    height: 300px;
-
-    border-radius: 115px 115px 18px 18px;
+    height: 280px;
   }
 
 
-  /* ---------- PAGES ---------- */
+  /* About + Projects + Skills + Contact */
 
   .projects-section,
   .about-section,
@@ -1072,108 +1056,38 @@ footer {
   }
 
 
-  /* ---------- SECTION HEADING ---------- */
+  /* Section heading */
 
   .section-heading {
     margin-bottom: 45px;
   }
 
-  .section-heading p {
-    font-size: 14px;
-  }
 
-  .section-heading h1 {
-    font-size: 42px;
-  }
-
-
-  /* ---------- ABOUT ---------- */
+  /* About */
 
   .about-text h2 {
     font-size: 24px;
-
-    line-height: 1.4;
-  }
-
-  .about-text p {
-    font-size: 15px;
   }
 
 
-  /* ---------- PROJECTS ---------- */
-
-  .project-image {
-    height: 180px;
-  }
-
-  .project-content {
-    padding: 20px;
-  }
-
-  .project-content h2 {
-    font-size: 22px;
-  }
-
-  .project-links {
-    flex-wrap: wrap;
-  }
-
-
-  /* ---------- SKILLS ---------- */
-
-  .skill-category h2 {
-    font-size: 22px;
-  }
-
-  .skill-item {
-    padding: 14px 16px;
-  }
-
-  .tools-category {
-    margin-top: 50px;
-  }
-
-  .tools-list {
-    flex-direction: column;
-
-    gap: 12px;
-  }
-
-  .tools-list .skill-item {
-    width: 100%;
-
-    min-width: 0;
-  }
-
-
-  /* ---------- CONTACT ---------- */
+  /* Contact */
 
   .contact-text h2 {
     font-size: 26px;
   }
 
-  .contact-text p {
-    font-size: 15px;
-  }
-
   .contact-card {
     padding: 18px;
-
-    gap: 15px;
-  }
-
-  .contact-card p {
-    font-size: 13px;
-
-    word-break: break-word;
   }
 
 
-  /* ---------- FOOTER ---------- */
+  /* Tools */
 
-  footer {
-    padding: 25px 15px;
+  .tools-list {
+    flex-direction: column;
+  }
 
-    font-size: 13px;
+  .tools-list .skill-item {
+    width: auto;
   }
 }

@@ -64,6 +64,7 @@ function Home() {
 
     }, speed);
 
+
     return () => clearTimeout(timer);
 
   }, [displayText, isDeleting, roleIndex]);
@@ -73,6 +74,7 @@ function Home() {
     <main className="home">
 
       <section className="hero">
+
 
         {/* LEFT SIDE */}
 
@@ -124,14 +126,15 @@ function Home() {
             </Link>
 
 
-            <a
-              href={`${import.meta.env.BASE_URL}resume01.pdf`}
-              download
-              className="secondary-button"
-            >
-              Download My Resume
-              <span>↓</span>
-            </a>
+           <a
+  href="https://drive.google.com/file/d/1Sq5ZZYrMVfGS3LJfh_yBCVYy7K7bHhZH/view?usp=drivesdk"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="secondary-button"
+>
+  View My Resume
+  <span>↗</span>
+</a>
 
           </div>
 
@@ -199,7 +202,7 @@ function Home() {
           <div className="profile-image">
 
             <img
-              src={`${import.meta.env.BASE_URL}profile.png`}
+              src="/profile.png"
               alt="Devesh Dadi"
             />
 
