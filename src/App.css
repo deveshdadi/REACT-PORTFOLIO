@@ -1091,3 +1091,137 @@ footer {
     width: auto;
   }
 }
+/* =========================
+   CONTACT FORM
+========================= */
+
+.contact-form-container {
+  width: 100%;
+  max-width: 550px;
+  margin-left: auto;
+}
+
+.contact-form {
+  width: 100%;
+  padding: 30px;
+  background: #0b1120;
+  border: 1px solid #1e293b;
+  border-radius: 18px;
+  box-sizing: border-box;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 15px;
+  font-family: inherit;
+  font-size: 15px;
+  color: #f8fafc;
+  background: #111827;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.form-group input {
+  height: 48px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #64748b;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.send-button {
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #6366f1;
+  color: white;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.send-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.send-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+}
+
+.form-success {
+  margin-top: 18px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #4ade80;
+  font-size: 14px;
+}
+
+.form-error {
+  margin-top: 18px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+  font-size: 14px;
+}
+
+
+/* =========================
+   CONTACT FORM RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .contact-form-container {
+    max-width: 100%;
+    margin-top: 30px;
+  }
+
+  .contact-form {
+    padding: 22px;
+  }
+
+}

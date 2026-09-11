@@ -1,4 +1,37 @@
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
 function Contact() {
+  const form = useRef();
+
+  const [status, setStatus] = useState("");
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    setStatus("sending");
+
+    emailjs
+      .sendForm(
+        "service_c5b9mwl",
+        "template_huu5g6s",
+        form.current,
+        {
+          publicKey: "kV6H9v4UQwmrM2ZgO",
+        }
+      )
+      .then(
+        () => {
+          setStatus("success");
+          form.current.reset();
+        },
+        (error) => {
+          console.error("EmailJS Error:", error);
+          setStatus("error");
+        }
+      );
+  };
+
   return (
     <main className="page">
 
@@ -6,10 +39,12 @@ function Contact() {
 
         <div className="section-heading">
           <p>Get in touch</p>
-          <h1>Contact me</h1>
+          <h1>Contact Me</h1>
         </div>
 
         <div className="contact-content">
+
+          {/* LEFT SIDE */}
 
           <div className="contact-text">
 
@@ -25,58 +60,133 @@ function Contact() {
               want to connect, feel free to reach out.
             </p>
 
+            <div className="contact-links">
+
+              <a
+                href="mailto:ddeveshdadi@gmail.com"
+                className="contact-card"
+              >
+                <span className="contact-icon">✉</span>
+
+                <div>
+                  <h3>Email</h3>
+                  <p>ddeveshdadi@gmail.com</p>
+                </div>
+              </a>
+
+              <a
+                href="https://github.com/deveshdadi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-card"
+              >
+                <span className="contact-icon">◉</span>
+
+                <div>
+                  <h3>GitHub</h3>
+                  <p>github.com/deveshdadi</p>
+                </div>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/devesh-dadi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-card"
+              >
+                <span className="contact-icon">in</span>
+
+                <div>
+                  <h3>LinkedIn</h3>
+                  <p>linkedin.com/in/devesh-dadi</p>
+                </div>
+              </a>
+
+            </div>
+
           </div>
 
 
-          <div className="contact-links">
+          {/* RIGHT SIDE - CONTACT FORM */}
 
-            {/* Gmail */}
+          <div className="contact-form-container">
 
-            <a
-              href="mailto:ddeveshdadi@gmail.com"
-              className="contact-card"
-            >
-              <span className="contact-icon">✉</span>
+            <form ref={form} onSubmit={sendEmail} className="contact-form">
 
-              <div>
-                <h3>Email</h3>
-                <p>ddeveshdadi@gmail.com</p>
+              <div className="form-group">
+                <label htmlFor="name">
+                  Name
+                </label>
+
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
               </div>
-            </a>
 
 
-            {/* GitHub */}
+              <div className="form-group">
+                <label htmlFor="email">
+                  Email
+                </label>
 
-            <a
-              href="https://github.com/deveshdadi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-card"
-            >
-              <span className="contact-icon">◉</span>
-
-              <div>
-                <h3>GitHub</h3>
-                <p>github.com/deveshdadi</p>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Your email address"
+                  required
+                />
               </div>
-            </a>
 
 
-            {/* LinkedIn */}
+              <div className="form-group">
+                <label htmlFor="message">
+                  Message
+                </label>
 
-            <a
-              href="https://www.linkedin.com/in/devesh-dadi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-card"
-            >
-              <span className="contact-icon">in</span>
-
-              <div>
-                <h3>LinkedIn</h3>
-                <p>linkedin.com/in/devesh-dadi</p>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  placeholder="Write your message..."
+                  required
+                ></textarea>
               </div>
-            </a>
+
+
+              <button
+                type="submit"
+                className="send-button"
+                disabled={status === "sending"}
+              >
+                {status === "sending"
+                  ? "Sending..."
+                  : "Send Message"}
+
+                {status !== "sending" && (
+                  <span>→</span>
+                )}
+              </button>
+
+
+              {status === "success" && (
+                <p className="form-success">
+                  Message sent successfully! Thank you for reaching out.
+                </p>
+              )}
+
+
+              {status === "error" && (
+                <p className="form-error">
+                  Something went wrong. Please try again.
+                </p>
+              )}
+
+            </form>
 
           </div>
 
