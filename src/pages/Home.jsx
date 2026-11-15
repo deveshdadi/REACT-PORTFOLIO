@@ -127,7 +127,7 @@ function Home() {
             {/* Resume */}
 
             <a
-              href="https://drive.google.com/file/d/1QjFjRY95KSjbvN2Bhn9PM4q1OOoV6f9q/view?usp=sharing"
+              href={`${import.meta.env.BASE_URL}devesh_resume(sep).pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="secondary-button"
