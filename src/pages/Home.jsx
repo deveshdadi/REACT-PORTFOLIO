@@ -127,7 +127,7 @@ function Home() {
             {/* Resume */}
 
             <a
-              href={`${import.meta.env.BASE_URL}devesh_resume(sep).pdf`}
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="secondary-button"
